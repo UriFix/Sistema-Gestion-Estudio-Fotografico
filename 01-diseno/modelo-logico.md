@@ -88,6 +88,13 @@ un estudio fotográfico.
 2. Toda reservacion corresponde a un paquete.
 3. Un cliente puede realizar varias reservaciones.
 4. Un paquete puede aparecer en varias reservaciones.
+5. Un servicio puede ofrecer varios paquetes.
+6. Cada paquete pertenece a un único servicio.
+7. Cada paquete tiene un identificador único.
+8. Varios paquetes pueden compartir el mismo id_servicio.
+9. El precio de un paquete debe ser mayor o igual a cero.
+10. No puede registrarse un paquete asociado a un servicio inexistente.
+
 
 ## Pendiente
 - Completar las entidades restantes.
