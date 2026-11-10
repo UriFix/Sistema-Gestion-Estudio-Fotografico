@@ -78,6 +78,63 @@ un estudio fotográfico.
 - estado
 - observaciones
 
+
+## Entidad: Pagos
+- id_pago (PK)
+- id_reservacion (FK)
+- monto
+- fecha_pago
+- metodo_pago
+- estado
+
+## Entidad: Equipos
+- id_equipo (PK)
+- nombre
+- numero_serie
+- tipo
+- estado
+
+## Entidad: AsignacionesEquipo
+- id_asignacion (PK)
+- id_sesion (FK)
+- id_equipo (FK)
+
+## Entidad: Fotografias
+- id_fotografia (PK)
+- id_sesion (FK)
+- nombre_archivo
+- ruta_archivo
+- fecha_captura
+- estado
+
+## Entidad: Entregas
+- id_entrega (PK)
+- id_sesion (FK)
+- fecha_entrega
+- metodo_entrega
+- estado
+
+## Entidad: DetalleEntrega
+- id_detalle (PK)
+- id_entrega (FK)
+- id_fotografia (FK)
+
+## Relaciones adicionales
+- Reservaciones 1:N Pagos
+- Sesiones 1:N Fotografias
+- Sesiones 1:N Entregas
+- Sesiones 1:N AsignacionesEquipo
+- Equipos 1:N AsignacionesEquipo
+- Entregas 1:N DetalleEntrega
+- Fotografias 1:N DetalleEntrega
+
+## Reglas por validar
+- Los pagos deben tener montos positivos.
+- No se permiten equipos duplicados dentro de una misma sesion.
+- Un equipo no puede asignarse a dos sesiones simultaneas.
+- Cada fotografia entregada debe pertenecer a la sesion correspondiente a la entrega.
+- Se permiten entregas parciales.
+
 ## Relaciones
 - Clientes 1:N Reservaciones
 - Paquetes 1:N Reservaciones
