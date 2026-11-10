@@ -96,6 +96,33 @@ un estudio fotográfico.
 10. No puede registrarse un paquete asociado a un servicio inexistente.
 
 
+## Relacion entre Reservaciones y Sesiones
+
+Una reservacion puede existir sin una sesion asignada.
+
+Cada sesion debe corresponder a una reservacion
+existente.
+
+Una reservacion puede generar como maximo una
+sesion fotografica.
+
+Cardinalidad:
+- Reservaciones 1 : 0..1 Sesiones
+
+Implementacion prevista:
+- Sesiones.id_reservacion sera FOREIGN KEY.
+- Sesiones.id_reservacion tendra UNIQUE.
+- Sesiones.id_reservacion sera NOT NULL.
+
+## Reglas adicionales
+
+17. No se permite crear una sesion sin reservacion.
+18. No se permite duplicar una sesion para la
+    misma reservacion.
+19. Una reservacion puede estar pendiente de
+    asignacion de fotografo.
+
+
 ## Pendiente
 - Completar las entidades restantes.
 - Definir restricciones y cardinalidad opcional.
